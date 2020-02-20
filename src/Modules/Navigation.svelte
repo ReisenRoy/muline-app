@@ -1,10 +1,10 @@
 <script>
   let isFullTable = false;
-  let isInStock = false
+  let isInStock = false;
 
   function toggleTable() {
     const elementsFT = document.querySelectorAll(".elementsFT");
-    elementsFT.forEach( e => e.classList.toggle("invis"));
+    elementsFT.forEach( e => e.classList.toggle("hide"));
     isFullTable = !isFullTable;
   }
 
@@ -15,7 +15,7 @@
     let count = 0;
     for(let i = 0; i < inStock.length; i++ ){
       if (Number(inStock[i].innerHTML) <= 0) {
-        tr[i].classList.toggle("invisRow");
+        tr[i].classList.toggle("hideRow");
       }
       count += Number(inStock[i].innerHTML);
       stockNum.innerHTML = count + " шт";
