@@ -1,19 +1,28 @@
 <script>
 	import EditItem from "./EditItem.svelte";
-  import ShowItem from "./ShowItem.svelte";
+  import ShowItem from "./Modules/ShowItem.svelte";
 	import Search from "./Modules/Search.svelte";
 	import Navigation from "./Modules/Navigation.svelte";
 	import { mulines } from "./Modules/muline-store.js";
 
+	let currentMuline = null;
 	let mulineList;
 	const unsubscribe = mulines.subscribe((value) => {
 		mulineList = value;
 	});
 
-  function showItem() {
-		console.log("show");
-  }
+  function showMulineInfo(item) {
+		currentMuline = item;
+	}
+	
+	$: console.log(currentMuline);
 </script>
+
+<style>
+	tr {
+		cursor: pointer;
+	}
+</style>
 
 <h1>Список</h1>
 
@@ -31,8 +40,8 @@
       <th>Цвет</th>
     </thead>
     <tbody>
-      {#each mulineList as muline}
-        <tr>
+      {#each mulineList as muline, id (muline.DMC)}
+        <tr on:click={showMulineInfo(muline)}>
           <td class="inStock">
             { muline.stock }
           </td>
@@ -55,5 +64,6 @@
   </table>
 </div>
 
-<!-- <ShowItem {mulineList} /> -->
-<!-- <EditItem {mulineList} /> -->
+{#if currentMuline}
+	<ShowItem {currentMuline} />
+{/if}

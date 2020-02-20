@@ -1,17 +1,31 @@
 <script>
-  export let mulineList;
+  export let currentMuline;
+
+
 </script>
 
-{#each mulineList as muline}
+<style>
+  .modal {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    padding: 1% 20%;
+    background: #B993D6;
+	  background: -webkit-linear-gradient(to right, #8CA6DB, #B993D6);
+	  background: linear-gradient(to right, #8CA6DB, #B993D6);
+  }
+</style>
 
-<h1>DMC { muline.DMC }</h1>
+<div class="modal">
+  <h1>DMC { currentMuline.DMC }</h1>
+  
+  <div class="container">
+    <button class="ui inverted primary basic huge fluid button">Назад к списку</button>
+  </div>
 
-<div class="container">
-  <a class="ui inverted primary basic huge fluid button" href="/list">Назад к списку</a>
-</div>
-
-<div class="container">
-<table class="ui celled center aligned table">
+  <table class="ui celled center aligned table">
     <thead>
       <th>Наличие</th>
       <th>ПНК</th>
@@ -23,24 +37,22 @@
     </thead>
     <tbody>
       <tr>
-        <td>{ muline.stock }</td>
-        <td>{ muline.Kirova }</td>
-        <td>{ muline.Anchor }</td>
-        <td>{ muline.Madeira }</td>
-        <td>{ muline.color_ru }</td>
-        <td>{ muline.color_en }</td>
+        <td>{ currentMuline.stock }</td>
+        <td>{ currentMuline.Kirova }</td>
+        <td>{ currentMuline.Anchor }</td>
+        <td>{ currentMuline.Madeira }</td>
+        <td>{ currentMuline.color_ru }</td>
+        <td>{ currentMuline.color_en }</td>
         <td 
-          style= "background: #{ muline.color }"
+          style= "background: #{ currentMuline.color }"
           class="color"
-          title="{ muline.color_en }"
+          title="{ currentMuline.color_en }"
         ></td>
       </tr>
     </tbody>
-</table>
-</div>
+  </table>
 
-<div class="container">
-  <a class="ui inverted orange basic huge fluid button" href="/list/{ muline.DMC }/edit">Редактировать</a>
+  <div class="container">
+    <button class="ui inverted orange basic huge fluid button">Редактировать</button>
+  </div>
 </div>
-
-{/each}
