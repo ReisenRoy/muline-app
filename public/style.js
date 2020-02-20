@@ -34,18 +34,3 @@ inStockBtn.addEventListener("click",function(){
     stockNum.textContent = count + " шт";
   }
 });
-
-//search
-function search(){
-let input = document.getElementById('search'),
-    filter = input.value.toUpperCase(),
-    tr = document.getElementsByTagName('tr');
-for (let i = 0; i < tr.length; i++) {
-    let txtValue = tr[i].textContent || tr[i].innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      tr[i].style.display = "";
-    } else {
-      tr[i].style.display = "none";
-    }
-  }
-}
