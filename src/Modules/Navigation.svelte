@@ -1,11 +1,11 @@
 <script>
-  let isfullTable = false;
+  let isFullTable = false;
+  let isInStock = false
 
   function toggleTable() {
     const elementsFT = document.querySelectorAll(".elementsFT");
-    for(let i = 0; i < elementsFT.length; i++){
-      elementsFT[i].classList.toggle("invis");
-    }
+    elementsFT.forEach( e => e.classList.toggle("invis"));
+    isFullTable = !isFullTable;
   }
 
   function inStock() {
@@ -20,15 +20,13 @@
       count += Number(inStock[i].innerHTML);
       stockNum.innerHTML = count + " шт";
     }
-
-    isfullTable = true;
+    isInStock = !isInStock;
   }
 </script>
 
 <div class="container">
   <div class="ui fluid buttons">
-    <button class="ui button" on:click={inStock}>В наличии</button>
-    <button 
-      class="ui button" class:purple={isfullTable} on:click={toggleTable}>Неполная таблица</button>
+    <button class="ui button" class:purple={isInStock} on:click={inStock}>В наличии</button>
+    <button class="ui button" class:purple={isFullTable} on:click={toggleTable}>Неполная таблица</button>
   </div>
 </div>

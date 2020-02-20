@@ -6,7 +6,7 @@ export let mulines = writable([
     Kirova: 222,
     Anchor: 333,
     Madeira: 444,
-    stock: 1000,
+    stock: 5,
     color_ru: "светленький серый",
     color_en: "lt grey",
     color: "cccccc",
