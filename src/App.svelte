@@ -1,7 +1,8 @@
 <script>
 	import EditItem from "./EditItem.svelte";
   import ShowItem from "./ShowItem.svelte";
-  import Search from "./Modules/Search.svelte";
+	import Search from "./Modules/Search.svelte";
+	import Navigation from "./Modules/Navigation.svelte";
   import Button from "./UI/Button.svelte";
 	import { mulines } from "./Modules/muline-store.js";
 
@@ -43,14 +44,7 @@
 <h1>Список</h1>
 
 <Search />
-
-<div class="container">
-  <div class="ui fluid buttons">
-    <button class="ui button" on:click={inStock}>В наличии</button>
-    <button 
-      class="ui button" class:purple={isfullTable} on:click={toggleTable}>Неполная таблица</button>
-  </div>
-</div>
+<Navigation />
 
 <div class="container">
   <table class="ui celled center aligned table">
