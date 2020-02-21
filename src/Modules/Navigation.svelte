@@ -18,9 +18,10 @@
         tr[i].classList.toggle("hideRow");
       }
       count += Number(inStock[i].innerHTML);
-      stockNum.innerHTML = count + " шт";
+      isInStock = !isInStock;
+      isInStock ? stockNum.innerHTML = count + " шт" : stockNum.innerHTML = "";
     }
-    isInStock = !isInStock;
+    
   }
 </script>
 
