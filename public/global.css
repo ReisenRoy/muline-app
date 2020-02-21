@@ -1,0 +1,56 @@
+body {
+	font-family: 'Comfortaa';
+	margin: 1% auto;
+	background: #B993D6;
+	background: -webkit-linear-gradient(to right, #8CA6DB, #B993D6);
+	background: linear-gradient(to right, #8CA6DB, #B993D6);
+}
+
+h1{
+	font-family: 'Comfortaa';
+	text-align: center;
+	color: white;
+}
+
+a{
+	color: rgba(0, 0, 0, 0.87);
+}
+
+label{
+	color: white;
+}
+
+tr:hover{
+	background-color:  #c1aeea;
+}
+
+.container {
+	margin: 1% 20%;
+}
+
+.hide {
+	display: none;
+}
+
+.hideRow {
+	display: none;
+}
+
+.ui.button {
+	margin: 5% 0;
+	font-family: 'Comfortaa';
+	background-color: #F9FAFB;
+	color: rgba(0, 0, 0, 0.87);
+}
+
+.ui.button:hover {
+	background-color: #F9FAFB;
+}
+
+.ui.button:focus {
+	background-color: #F9FAFB;
+}
+
+::placeholder {
+font-family: 'Comfortaa';
+}
