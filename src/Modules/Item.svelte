@@ -1,6 +1,7 @@
 <script>
-  export let muline;
+  import EditItem from "./EditItem.svelte";
 
+  export let muline;
 </script>
 
 <style>
