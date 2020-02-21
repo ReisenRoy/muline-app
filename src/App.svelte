@@ -1,15 +1,20 @@
 <script>
+  import { onDestroy } from "svelte";
   import Item from "./Modules/Item.svelte";
 	import Search from "./Modules/Search.svelte";
   import Navigation from "./Modules/Navigation.svelte";
   import { mulines } from "./Modules/muline-store.js";
 
-	let mulineList;
+	export let mulineList;
 	const unsubscribe = mulines.subscribe((value) => {
 		mulineList = value;
   });
+
+  function updateDB(item) {
+    mulines.update(i => i);
+  }
   
-  unsubscribe();
+  onDestroy(unsubscribe);
 </script>
 
 <h1>Список</h1>
@@ -29,7 +34,7 @@
     </thead>
     <tbody>
       {#each mulineList as muline, id (muline.DMC)}
-        <Item {muline} />
+        <Item {muline} on:update={updateDB} />
       {/each}
     </tbody>
   </table>
