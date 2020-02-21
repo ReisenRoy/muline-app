@@ -5,17 +5,15 @@
 	import Navigation from "./Modules/Navigation.svelte";
 	import { mulines } from "./Modules/muline-store.js";
 
-	let currentMuline = null;
+	let currentMuline = "";
 	let mulineList;
 	const unsubscribe = mulines.subscribe((value) => {
 		mulineList = value;
 	});
 
   function showMulineInfo(item) {
-		currentMuline = item;
-	}
-	
-	$: console.log(currentMuline);
+    currentMuline = item;
+  }
 </script>
 
 <style>

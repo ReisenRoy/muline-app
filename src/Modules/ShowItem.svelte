@@ -1,7 +1,5 @@
 <script>
   export let currentMuline;
-
-
 </script>
 
 <style>
@@ -22,7 +20,7 @@
   <h1>DMC { currentMuline.DMC }</h1>
   
   <div class="container">
-    <button class="ui inverted primary basic huge fluid button">Назад к списку</button>
+    <a class="ui inverted primary basic huge fluid button" href="/">Назад к списку</a>
   </div>
 
   <table class="ui celled center aligned table">
