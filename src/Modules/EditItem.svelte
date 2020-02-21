@@ -46,12 +46,12 @@
 
 <div class="modal-backdrop" on:click={closeModal} />
 <div class="modal">
-  <!-- <form class="ui form" action="/list/{muline.DMC}?_method=PUT" method="POST"> -->
-  <form class="ui form">
+  <div class="container">
     <h1>Редактирование DMC {muline.DMC}</h1>
+    <button class="ui inverted primary basic huge fluid button" on:click={closeModal} >Отменить</button>
 
-    <div class="container">
-      <button class="ui inverted primary basic huge fluid button" on:click={closeModal} >Отменить</button>
+    <!-- <form class="ui form" action="/list/{muline.DMC}?_method=PUT" method="POST"> -->
+    <form class="ui form">
       <div class="field">
         <label>Наличие</label>
         <input 
@@ -116,6 +116,6 @@
         on:click|preventDefault={ submitForm(muline) } >
         Сохранить
       </button>
-    </div>
-  </form>
+    </form>
+  </div>
 </div>
